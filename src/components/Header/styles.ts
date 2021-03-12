@@ -8,9 +8,10 @@ export const Container = styled.div`
     background-position-x: center;
     background-position-y: center;
     background-size: cover;
-    color: #fff;
+    color: #333;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
+    border-radius: 20px;
 `;
