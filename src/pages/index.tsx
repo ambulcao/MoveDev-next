@@ -1,14 +1,21 @@
 import Head from 'next/head';
 import { ExperienceBar } from "../components/ExperienceBar";
+import { ThemeProvider } from 'styled-components';
+import light from '../styles/themes/light';
+
+import GlobalStyle from '../styles/global';
+import Header from '../components/Header';
 
 export default function Home() {
     return (
-        <div className="container">
-            <Head>
+        <ThemeProvider theme={light}>
+            <div className="container">
+                <GlobalStyle />
+                <Header /><br /><br />
 
-            </Head>
-
-            <ExperienceBar />
-        </div>
+                <ExperienceBar />
+            </div>
+        </ThemeProvider>
     )
 }
+
