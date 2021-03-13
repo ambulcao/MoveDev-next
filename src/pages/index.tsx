@@ -12,6 +12,7 @@ import Header from '../components/Header';
 import { Profile } from '../components/Profile';
 
 import styles from '../styles/pages/Home.module.css';
+import { CompletedChallenges } from '../components/CompletedChallenges';
 
 const Home = () => {
     //const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
@@ -31,6 +32,7 @@ const Home = () => {
                 <section>
                     <div>
                      <Profile />
+                     <CompletedChallenges />
                     </div>
                     <div>
 
