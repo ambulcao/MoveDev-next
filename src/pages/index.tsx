@@ -9,6 +9,9 @@ import dark from '../styles/themes/dark';
 
 import GlobalStyle from '../styles/global';
 import Header from '../components/Header';
+import { Profile } from '../components/Profile';
+
+import styles from '../styles/pages/Home.module.css';
 
 const Home = () => {
     //const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
@@ -20,11 +23,19 @@ const Home = () => {
 
     return (
         <ThemeProvider theme={theme}>
-            <div className="container">
+            <div className={styles.container}>
                 <GlobalStyle />
                 <Header toggleTheme={toggleTheme}/><br /><br />
 
                 <ExperienceBar />
+                <section>
+                    <div>
+                     <Profile />
+                    </div>
+                    <div>
+
+                    </div>
+                </section>
             </div>
         </ThemeProvider>
     )
