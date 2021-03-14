@@ -1,4 +1,4 @@
-import React, { useState }from 'react';
+import React, { useState } from 'react';
 import Head from 'next/head';
 import { ExperienceBar } from "../components/ExperienceBar";
 import { ThemeProvider, DefaultTheme } from 'styled-components';
@@ -13,6 +13,7 @@ import { Profile } from '../components/Profile';
 
 import styles from '../styles/pages/Home.module.css';
 import { CompletedChallenges } from '../components/CompletedChallenges';
+import { Countdown } from '../components/Countdown';
 
 const Home = () => {
     //const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
@@ -26,16 +27,20 @@ const Home = () => {
         <ThemeProvider theme={theme}>
             <div className={styles.container}>
                 <GlobalStyle />
-                <Header toggleTheme={toggleTheme}/><br /><br />
+                <Header toggleTheme={toggleTheme} /><br /><br />
 
+
+                <Head>
+                    <title>Início | Pomo-Developer</title>
+                </Head>
                 <ExperienceBar />
                 <section>
                     <div>
-                     <Profile />
-                     <CompletedChallenges />
+                        <Profile />
+                        <CompletedChallenges />
+                        <Countdown />
                     </div>
                     <div>
-
                     </div>
                 </section>
             </div>

@@ -15,7 +15,6 @@ const Header: React.FC<Props> = ({ toggleTheme }) => {
     return (
         <Container>
             Pomodoro Developer
-
             <Switch 
                 onChange={toggleTheme}
                 checked={title === 'dark'}
