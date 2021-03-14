@@ -5,12 +5,14 @@ export function Profile() {
         <div className={styles.profileContainer}>
             <img src="https://craftpng.com/images/bt/web-development-software-developer-table.png" alt="Developer" />
             <div>
-                <strong>Exercite-se</strong>
-                <p>
-                    <img src="icons/level.svg" alt="level" />
+                <span>Exercite-se</span>
+                <div>
+                    <p><img src="icons/level.svg" alt="level" /></p>
+                <span>
                     
                     Level 1
-                </p>
+                </span>
+                </div>
             </div>
         </div>
     )
