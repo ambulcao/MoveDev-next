@@ -17,6 +17,8 @@
     --blue-dark: #4953B8;
     --blue-twitter: #2AA9E0;
     --switch-line: #7159C1;
+    --red-dark: #b04646;
+    --green-dark: #4f7d4d;
 }
 
 @media(max-width: 1080px) {
@@ -28,6 +30,12 @@
 @media(max-width: 720px) {
     html {
         font-size: 87.5%;
+    }
+}
+
+@media(max-width: 720px) {
+    .challengeBoxContainer > div {
+        flex-direction: column;
     }
 }
 

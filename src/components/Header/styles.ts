@@ -14,4 +14,5 @@ export const Container = styled.div`
     justify-content: space-between;
     padding: 0 30px;
     border-radius: 20px;
+    opacity: 0.5;
 `;
