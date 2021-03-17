@@ -15,6 +15,7 @@ import styles from '../styles/pages/Home.module.css';
 import { CompletedChallenges } from '../components/CompletedChallenges';
 import { Countdown } from '../components/Countdown';
 import { ChallengeBox } from '../components/ChallengeBox';
+import { CountdownProvider } from '../contexts/CountdownContext';
 
 const Home = () => {
     //const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
@@ -35,16 +36,19 @@ const Home = () => {
                     <title>Início | Pomo-Developer</title>
                 </Head>
                 <ExperienceBar />
-                <section>
-                    <div>
-                        <Profile />
-                        <CompletedChallenges />
-                        <Countdown />
-                    </div>
-                    <div>
-                        <ChallengeBox />
-                    </div>
-                </section>
+
+                <CountdownProvider>
+                    <section className="homeSection">
+                        <div className="column">
+                            <Profile />
+                            <CompletedChallenges />
+                            <Countdown />
+                        </div>
+                        <div className="column">
+                            <ChallengeBox />
+                        </div>
+                    </section>
+                </CountdownProvider>
             </div>
         </ThemeProvider>
     )

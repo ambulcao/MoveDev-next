@@ -16,3 +16,25 @@
     gap: 6.25rem;
     align-content: center;
 }
+
+.homeSection .column  {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .homeSection .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .homeSection .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}

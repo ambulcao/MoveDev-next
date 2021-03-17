@@ -33,12 +33,6 @@
     }
 }
 
-@media(max-width: 720px) {
-    .challengeBoxContainer > div {
-        flex-direction: column;
-    }
-}
-
 body {
     background: var(--backgroung);
     color: var(--text);
