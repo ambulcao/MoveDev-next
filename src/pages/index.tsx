@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { GetServerSideProps } from 'next';
 import Head from 'next/head';
 import { ExperienceBar } from "../components/ExperienceBar";
 import { ThemeProvider, DefaultTheme } from 'styled-components';
@@ -17,7 +18,7 @@ import { Countdown } from '../components/Countdown';
 import { ChallengeBox } from '../components/ChallengeBox';
 import { CountdownProvider } from '../contexts/CountdownContext';
 
-const Home = () => {
+const Home = (props) => {
     //const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
     const [theme, setTheme] = useState(dark);
 
@@ -38,13 +39,13 @@ const Home = () => {
                 <ExperienceBar />
 
                 <CountdownProvider>
-                    <section className="homeSection">
-                        <div className="column">
+                    <section>
+                        <div>
                             <Profile />
                             <CompletedChallenges />
                             <Countdown />
                         </div>
-                        <div className="column">
+                        <div>
                             <ChallengeBox />
                         </div>
                     </section>
@@ -56,3 +57,14 @@ const Home = () => {
 
 export default Home;
 
+export const getServerSideProps: GetServerSideProps = async (ctx) => {
+    const { level, currentExperience, challengesCompleted } = ctx.req.cookies; 
+
+    return {
+        props: {
+            level,
+            currentExperience,
+            challengesCompleted,
+        }
+    }
+}
