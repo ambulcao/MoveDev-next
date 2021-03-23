@@ -17,8 +17,15 @@ import { CompletedChallenges } from '../components/CompletedChallenges';
 import { Countdown } from '../components/Countdown';
 import { ChallengeBox } from '../components/ChallengeBox';
 import { CountdownProvider } from '../contexts/CountdownContext';
+import { ChallengesProvider } from '../contexts/ChallengesContext';
 
-const Home = (props) => {
+interface HomeProps {    
+        level: number;
+        currentExperience: number;
+        challengesCompleted: number;
+    }
+
+const Home = (props: HomeProps) => {
     //const [theme, setTheme] = usePersistedState<DefaultTheme>('theme', light);
     const [theme, setTheme] = useState(dark);
 
@@ -27,6 +34,11 @@ const Home = (props) => {
     };
 
     return (
+        <ChallengesProvider 
+            level={props.level}
+            currentExperience={props.currentExperience}
+            challengesCompleted={props.challengesCompleted}
+        >
         <ThemeProvider theme={theme}>
             <div className={styles.container}>
                 <GlobalStyle />
@@ -52,6 +64,7 @@ const Home = (props) => {
                 </CountdownProvider>
             </div>
         </ThemeProvider>
+        </ChallengesProvider>
     )
 }
 
@@ -62,9 +75,9 @@ export const getServerSideProps: GetServerSideProps = async (ctx) => {
 
     return {
         props: {
-            level,
-            currentExperience,
-            challengesCompleted,
+            level: Number(level),
+            currentExperience: Number(currentExperience),
+            challengesCompleted: Number(challengesCompleted)
         }
     }
 }
